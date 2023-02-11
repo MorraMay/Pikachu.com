@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rowdies';
+    font-weight: 100;
+    background: url(https://i.pinimg.com/originals/6a/77/85/6a7785ba510bcc87c9fc62a2030c4569.jpg);
+    background-size: cover;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 30px auto;
+    align-items: center;
+}
+.block{
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+}
+.batyko__burger {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger, .burger::after, .burger::before{
+    content: '';
+    position: absolute;
+    width: 33px;
+    left: 0px;
+    transition: 0.5s;
+    height: 3px;
+    background-color: #000;
+}
+.burger {
+    top: 25px;
+}
+.burger::after{
+    top: -10px;
+}
+.burger::before{
+    top: 10px;
+}
+.batyko__burger:hover .burger::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.batyko__burger:hover .burger::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+.batyko__burger:hover .burger{
+    transform: rotate(20deg);
+    
+}
+.card {
+    position: relative;
+    width: 450px;
+    height: 600px;
+    background-image: url(https://media.istockphoto.com/id/523763528/vector/abstract-tile-orange-background.jpg?s=612x612&w=0&k=20&c=oNhqymCA6rErQ-oCxk8YwgAyn1iWqlvM7JqqdDspr0k=);
+    background-size: cover;
+    border-radius: 25px;
+    padding: 25px;
+    color: rgb(25, 24, 24);
+    cursor: pointer;
+    box-shadow: inset -5px -10px 50px rgba(0, 0, 0, 0.428);
+}
+.card__layer{
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    background-image: url(./img/1654456837_1-celes-club-p-pokemoni-oboi-na-telefon-krasivie-1.jpg);
+    background-size: cover;
+    border-radius: 25px;
+    padding: 25px;
+    color: rgb(25, 24, 24);
+    cursor: pointer;
+    left:0%;
+    z-index: -1;
+    bottom: 0;
+    width: 0%;
+    box-shadow: inset -5px -10px 50px rgba(0, 0, 0, 0.428);
+    animation: layer 16s  cubic-bezier(0.86, 0, 0.07, 1) infinite 6s alternate-reverse;
+    
+}
+@keyframes layer{
+    0%{
+        transform: translateX(350px);
+        width: 100%;
+    }
+    50%{
+        transform: translateX(20px);
+        width: 100%;
+    }
+    55%{
+        transform: translateX(0px);
+        width: 100%;
+    }
+    60%{
+        transform: translateX(30px);
+        width: 100%;
+    }
+    66%{
+        transform: translateX(50px);
+        width: 100%;
+    }
+    72%{
+        transform: translateX(0px);
+        width: 100%;
+    }
+    100%{
+        transform: translateX(0px);
+        width: 100%;
+    }
+
+}
+.card__body {
+    background: url(https://img.freepik.com/premium-vector/abstract-boxes-background-modern-technology-with-square-mesh-geometric-white-background-with-lines-cube-cell-vector-illustration_41981-1987.jpg);
+    background-size: cover;
+    padding: 5px 20px;
+    transition: 0.6s;
+    border-radius: 5px;
+    box-shadow: inset 5px 10px 50px rgba(0, 0, 0, 0.428);
+    animation: body 1.3s linear infinite alternate-reverse;
+}
+@keyframes body{
+    0%{
+        transform:scale(1.006);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.card:hover .card__body{
+    background: url(https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg);
+    background-size: cover;
+    box-shadow: inset 5px -10px 50px rgba(0, 0, 0, 0.428);
+}
+.card__basic {
+    transition: 0.6s;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 1px;
+}
+.card:hover .card__basic{
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+.card__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__name {
+}
+.card:hover .card__name{
+    display: none;
+}
+.card__name-2{
+    display: none;
+    text-shadow: 0 0 3px #000;
+    color: #fff;
+}
+.card:hover .card__name-2{
+    display: block;
+}
+.card__hp {
+    display: flex;
+    align-items: center;
+}
+.hp {
+    margin: 0 10px;
+    animation: hp 1.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes hp{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(2px);
+        color: rgb(238, 25, 25);
+    }
+}
+@keyframes hp-2{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(2px);
+        color: rgb(238, 185, 25);
+    }
+}
+
+.hp-2{
+    margin: 0 10px;
+    display: none;
+    text-shadow: 0 0 3px #000;
+    color: #fff;
+    animation: hp-2 1.5s ease-in-out infinite alternate-reverse;
+}
+.card:hover .hp{
+    display: none;
+}
+.card:hover .hp-2{
+    display: block;
+}
+.fa-sharp{
+    padding: 5px 6px;
+    border-radius: 50%;
+    background-color: rgb(235, 198, 103);
+    box-shadow: inset -5px 0px 10px rgba(0, 0, 0, 0.412);
+    transition: 0.6s;
+}
+@keyframes svg{
+    0%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
+.card:hover .fa-sharp{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    transform:  skew(20deg) ;
+    /* rotate - перегортає об'єкт (вимірюється в deg - градуси) 
+        scale - збільшує та зменьшує об'єкт (за замовченням розімр - 1)
+        translate - рухає об'єкт по осі Х та У. (вимірюється в пікселях)
+        skew - Вигинає об'єкт по осі Х та У (вимірюється в deg) 
+    */
+}
+.card__image {
+    margin-top: 5px;
+}
+.pikachu__avatar {
+    width: 360px;
+    height: 330px;
+    background: url(https://conteudo.imguol.com.br/c/entretenimento/58/2017/05/30/pikachu-nervoso-1496159464346_v2_450x450.png);
+    background-size: cover;
+    border: 10px solid rgb(235, 198, 103);
+    transition: 0.6s;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.801);
+    animation: avatar 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate-reverse;
+}
+@keyframes avatar{
+    0%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(-3px);
+    }
+}
+.card:hover .pikachu__avatar {
+    background: url(https://http2.mlstatic.com/D_NQ_NP_730820-MLM49426275177_032022-O.jpg);
+    background-size: cover;
+    box-shadow: 10px 10px 15px rgba(255, 249, 244, 0.595);
+    border: 10px solid rgb(234, 255, 42);
+}
+
+.pikachu__info {
+    text-align: center;
+    background-color:rgb(235, 198, 103);
+    margin-top: 10px;
+    padding: 10px 0px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.702);
+    transition: 0.6s;
+    animation: info 2s linear infinite alternate-reverse;
+}
+@keyframes info{
+    0%{
+        
+    }
+    100%{
+        transform: scale(1.1);
+        background-color:rgb(24, 199, 190);
+    }
+}
+
+.pikachu__info-2 {
+    text-align: center;
+    background-color:rgb(234, 255, 42);
+    box-shadow: 0px 6px 10px rgba(255, 249, 244, 0.595);
+    margin-top: 10px;
+    padding: 10px 0px;
+    transform: translateY(30px);
+    transition: 0.6s;
+    opacity: 0;
+}
+.card:hover .pikachu__info{
+    opacity: 0;
+    transform: translateY(-30px);
+}
+.card:hover .pikachu__info-2{
+    opacity: 1;
+    transform: translateY(-45px);
+}
+.card__content {
+    border-bottom: 2px solid #000;
+    padding: 0px 5px 20px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+}
+.card:hover .card__content{
+    border-bottom: 2px solid rgb(255, 253, 253);
+}
+.content__text {
+    font-size: 22px;
+    font-family: 'Permanent Marker', cursive;
+    transition: 0.6s;
+}
+.content__text-2 {
+    font-size: 22px;
+    font-family: 'Permanent Marker', cursive;
+    color:#fff;
+    transition: 0.6s;
+    display: none;
+    text-shadow: 0 0 3px #000;
+}
+.card:hover .content__text{
+    display: none;
+}
+.card:hover .content__text-2{
+    display: block;
+}
+.fa-galactic-republic {
+    font-size: 40px;
+    transition: 0.6s;
+}
+
+.card:hover .fa-galactic-republic{
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    transform: rotate(360deg);
+}
+.content__info {
+    font-size: 22px;
+    font-family: 'Permanent Marker', cursive;
+    transition: 0.6s;
+    animation: svg 1.4s linear infinite alternate-reverse;
+}
+.content__info-2 {
+    font-size: 22px;
+    font-family: 'Permanent Marker', cursive;
+    color:#fff;
+    transition: 0.6s;
+    display: none;
+    text-shadow: 0 0 3px #000;
+    animation: svg 1.4s linear infinite alternate-reverse;
+}
+.card:hover .content__info{
+    display: none;
+}
+.card:hover .content__info-2{
+    display: block;
+}
